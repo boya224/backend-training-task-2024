@@ -125,13 +125,19 @@ let h = f + g;
 // 請從以下新增註解，告知上面每行各別是哪些型別
 // a 是 string
 // b 是 ???
+// c 是 string
+// d 是 number
+// e 是 string
+// f 是 boolean
+// g 是 number
+// h 是 number
 
 // ### 題目十：傳值與傳參考
 // 情境：請依照程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
 // 以下程式碼請勿變更
 
-let numberArr1 = [5, 10, 15];
-let numberArr2 = numberArr1;
-numberArr2.push(20);
-numberArr2 = [25, 30, 35];
-console.log(numberArr1, numberArr2);
+let numberArr1 = [5, 10, 15]; //宣告一個變數numberArr1並賦予一個5,10,15的數字陣列
+let numberArr2 = numberArr1;//宣告一個變數numberArr2 並賦予變數numberArr1的值
+numberArr2.push(20);//在變數numberArr2的值最後面加上一個20的值
+numberArr2 = [25, 30, 35];//變數numberArr2 重新賦予25,30,35數字陣列
+console.log(numberArr1, numberArr2);//[5, 10, 15] [25, 30, 35]
