@@ -76,8 +76,10 @@ const sun = 1;
 
 let myWater = 2000; // 水壺容量
 myWater -= 500; // 早上喝了 500cc
-
-console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
+myWater -= 800;
+myWater += 1000;
+myWater -=700;
+console.log(`Alex 的水壺還有 ${myWater}cc 的水`);//Alex 的水壺還有 1000cc 的水
 
 // ### 題目七：情境題：變數計算
 // 情境：Anna 每週都會到單次計費型的健身房運動，週日運動結束後，想知道自己本週的消費金額，但結帳系統出了點問題，Anna 決定自己用 JS 來計算。
@@ -87,11 +89,19 @@ console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 // 她本週參加了 2 堂團體課程。
 
 let totalBill = 0;
+let groupClasses = 150;
 const machineUsePrice = 50;
+
+let thisWeekMachineUse =3;
+let thisWeekgroupClasses = 2;
+let machineUsePriceTotal = machineUsePrice * thisWeekMachineUse;
+let groupClassesTotal = groupClasses * thisWeekgroupClasses;
+let total = machineUsePriceTotal + groupClassesTotal
 
 console.log(
   `Anna 本週器械使用費共 ${machineUsePriceTotal} 元，團體課費用共 ${groupClassesTotal} 元，一共消費金額是 ${total}元`
-);
+);//Anna 本週器械使用費共 150 元，團體課費用共 300 元，一共消費金額是 450 元
+
 
 // ### 題目八：變數重新賦予值
 // 情境：請依照以下程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
