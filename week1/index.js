@@ -58,6 +58,11 @@ const classSetPricePerNum = classSetPrice/classSetNum;
 // 4-2. 目前一起等待的機車有 8 台
 // 4.3. Alex 望向天空，看到天上有 5 朵白雲和 1 顆太陽
 
+let trafficLightIsRed = true;
+let trafficLightIsGreen = 28;
+let waittingScooter = 8;
+let clouds = 5;
+const sun = 1;
 
 
 // ### 題目六：情境題：簡單變數計算
