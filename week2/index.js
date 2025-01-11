@@ -3,37 +3,37 @@
 // 若不確定答案，可將 code 貼在 chrome console 顯示後，再回頭補知識點。
 let a = 9;
 let b = 13;
-console.log(a > 0);
-console.log(b > a);
-console.log(a + b > 1);
+console.log(a > 0);     //true
+console.log(b > a);     //true
+console.log(a + b > 1); //true
 let c = 51;
 let d = 163;
-console.log(c == d);
-console.log(c !== d);
+console.log(c == d);   //false
+console.log(c !== d);  //true
 let e = 28;
 let f = 45;
-console.log(f >= e);
-console.log(f != e);
-console.log(f == e);
+console.log(f >= e);   //true
+console.log(f != e);   //true
+console.log(f == e);   //false
 
 // ### 題目二：比較運算子 + 強制轉型
 // 請回答每個 console.log 的值為？
 let g = 8;
 let h = '8';
-console.log(g * h == 88);
-console.log(g * h == 64);
-console.log(g * h === 64);
+console.log(g * h == 88);  //false 自動轉型成數字型別
+console.log(g * h == 64); //true
+console.log(g * h === 64); //true
 
 let i = '9';
 let j = '9';
-console.log(i + j == 99);
-console.log(i + j === '99');
-console.log(i + j === 99);
+console.log(i + j == 99); //true 
+console.log(i + j === '99'); //true
+console.log(i + j === 99); //false
 
 var k = 3;
 var l = '8';
 // 請文字解釋為什麼
-console.log(k * l > 21);
+console.log(k * l > 21); //數字型別3＊字串型別8會自動轉型成數字做計算 故 等於24 印出結果為true
 
 // ### 題目三：邏輯運算子 + if, else
 // 情境：健身房週年慶，買課程送贈品
@@ -49,11 +49,12 @@ let BobPrice = 1800; /* Bob 消費金額 */
 let BobIsVip = false; /* Bob 是否為 VIP */
 
 // 練習：（可自行將下方程式碼的註解刪除，完成答題）
-// if () {
-//   console.Log（"客戶您好，您有符合贈品資格"）；
-// } else {
-//   console.Log（"客戶您好，您沒有符合贈品資格"）
-// }
+if (BobPrice >= giftPriceRule || BobIsVip === true) {
+      giftNum --;
+      console.Log（"客戶您好，您有符合贈品資格"）；
+ } else {
+      console.Log（"客戶您好，您沒有符合贈品資格"）
+}
 
 console.log(`贈品還剩下${giftNum}個`);
 
