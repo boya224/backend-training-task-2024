@@ -99,8 +99,15 @@ if (playerA === '剪刀' && playerB === '剪刀') {
 }
 
 // 練習：使用 if, else if, else 判斷輸贏
-if
-
+if(playerA === '剪刀' && playerB === '石頭'){
+      console.log('playerA輸 playerB贏');
+}else if(playerA === '剪刀' && playerB === '布'){
+      console.log('playerA贏 playerB輸');
+}else if(playerA === '石頭' && playerB === '布'){
+      console.log('playerA輸 playerB贏');{         
+}else{
+      console.log('平手');
+}
 // ### 題目六：陣列、物件變數定義
 // 這是一間位於高雄市的健身房，名為「高雄市健身教練聯盟」，專注於提供高品質的健身指導服務。健身房內有多位專業教練，以下是兩位教練的詳細介紹：
 /*
@@ -150,9 +157,9 @@ let performanceData = {
 
 // 練習：第一位教練（可將下方程式碼註解移除，完成答題）
 
-// if (/* 判斷邏輯，使其為 true */) {
-//   // 請填寫第一位教練業績增長程式碼，使用 +=
-// }
+ if (performanceData.coaches[0].performance < 50000) {
+   50000 - performanceData.coaches[0].performance
+}
 
 // 練習：第二位教練（可將下方程式碼註解移除，完成答題）
 
@@ -169,7 +176,12 @@ console.log(performanceData);
   - 瑜伽每分鐘消耗 5 卡
   - 騎腳踏車每分鐘消耗 8 卡
 */
-const activities = {}; // 練習：使用 `物件包含物件` 的格式定義運動類型與每分鐘消耗卡路里
+ // 練習：使用 `物件包含物件` 的格式定義運動類型與每分鐘消耗卡路里
+const activities = {
+      treadmill:{burnCalories:10},
+      yoga:{burnCalories:5},
+      ridingBicycle:{burnCalories:8}
+};
 
 // ## 題目九
 // 情境：算小明今天的卡路里消耗
@@ -177,8 +189,15 @@ const activities = {}; // 練習：使用 `物件包含物件` 的格式定義�
 // 小明今天騎了 10 分鐘的腳踏車去健身房，並先跑了 30 分鐘的跑步機熱身，最後再參加了 40 分鐘的瑜伽團課，最後再騎 10 分鐘腳踏車回家。
 
 let calorieBurn = 0;
-
+let bicycleTime=10;
+let treadmillTime=30;
+let yogaTime=40;
+bicycleTime += 10;
 // 練習：計算小明今日消耗的卡路里
+
+calorieBurn += activities.ridingBicycle.burnCalories * bicycleTime;
+calorieBurn += activities.treadmill.burnCalories  * bicycleTime;
+calorieBurn += activities.yoga.burnCalories  * bicycleTime;
 
 console.log(`小明今日一共消耗約 ${calorieBurn} 卡路里。`);
 
@@ -212,8 +231,24 @@ if (exerciseRecords[0].duration >= 30 && exerciseRecords[0].heartRate >= 130) {
 }
 
 // 練習：週二、週三、週四、週五、週六
+if(exerciseRecords[1].duration>= 30 && exerciseRecords[1].heartRate >= 130){
+  totalDuration += exerciseRecords[1].duration;
+   validDays += 1;   
+}
+if(exerciseRecords[2].duration>= 30 && exerciseRecords[2].heartRate >= 130){
+  totalDuration += exerciseRecords[2].duration;
+   validDays += 1;   
+}
+if(exerciseRecords[3].duration>= 30 && exerciseRecords[3].heartRate >= 130){
+  totalDuration += exerciseRecords[3].duration;
+   validDays += 1;   
+}
+if(exerciseRecords[4].duration>= 30 && exerciseRecords[4].heartRate >= 130){
+  totalDuration += exerciseRecords[4].duration;
+   validDays += 1;   
+}
 
 // 練習：判斷是否符合 533 原則
-let isCompliant; // 條件：運動次數至少 5 次 || 運動時間累績達標 >= 150;
+let isCompliant = validDays >=5 || totalDuration >= 150; // 條件：運動次數至少 5 次 || 運動時間累績達標 >= 150;
 
-console.log(`小明的運動量是否達標: ${isCompliant}`); // 輸出: 小明的運動量是否達標
+console.log(`小明的運動量是否達標: ${isCompliant}`); // 輸出: 小明的運動量是否達標 //false
