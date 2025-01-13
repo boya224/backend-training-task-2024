@@ -74,7 +74,18 @@ let coachBonus = baseBonus; // 教練業績獎金帳單，並已加入條件一�
 
 // 練習：計算教練業績獎金
 
-console.log(`小明總共需支付 $${coachBonus} 獎金`);
+if (coachIncome < 100000){
+      coachBonus+= coachIncome *0.1
+      console.log(`支付10%獎金`);
+}else if(coachIncome >= 100000 && coachIncome <=300000 ){
+      coachBonus+= coachIncome *0.15
+      console.log(`支付15%獎金`);
+}else{
+      coachBonus+= coachIncome *0.20
+      console.log(`支付20%獎金`);
+}
+
+console.log(`小明總共需支付 ${coachBonus} 獎金`);
 
 // ### 題目五：剪刀石頭布
 // 請寫程式來判斷剪刀石頭布的輸贏
