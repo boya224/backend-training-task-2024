@@ -120,25 +120,12 @@ if
 - 背景介紹：李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。
 - 是否接收新學員：否
 */
+      //specialSkill//coachWang//chargePerCourse//courseMin//isAvailable
 
 const gymCoach = {
-      coachWang:{
-                  specialSkill:["力量訓練","減重課程"],
-            course=[
-                  oneONoneTrainingCourse={
-                              chargePerCourse:1800,
-                              courseMin:50,
-                              isAvailable:false,
-                        }
-                  groupTrainingCourse={
-                              chargePerCourse:1200,
-                              courseMin:75,
-                              isAvailable:true,
-                        }]
-                       }
+     
                   
-                  
-              
+            
 }; // 練習：使用物件變數定義兩位教練的資訊
 
 console.log(gymCoach);
