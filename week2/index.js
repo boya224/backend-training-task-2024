@@ -97,7 +97,9 @@ let playerB = '剪刀';
 if (playerA === '剪刀' && playerB === '剪刀') {
   console.log('平手');
 }
+
 // 練習：使用 if, else if, else 判斷輸贏
+if
 
 // ### 題目六：陣列、物件變數定義
 // 這是一間位於高雄市的健身房，名為「高雄市健身教練聯盟」，專注於提供高品質的健身指導服務。健身房內有多位專業教練，以下是兩位教練的詳細介紹：
@@ -119,7 +121,25 @@ if (playerA === '剪刀' && playerB === '剪刀') {
 - 是否接收新學員：否
 */
 
-const gymCoach = {}; // 練習：使用物件變數定義兩位教練的資訊
+const gymCoach = {
+      coachWang:{
+                  specialSkill:["力量訓練","減重課程"],
+            course=[
+                  oneONoneTrainingCourse={
+                              chargePerCourse:1800,
+                              courseMin:50,
+                              isAvailable:false,
+                        }
+                  groupTrainingCourse={
+                              chargePerCourse:1200,
+                              courseMin:75,
+                              isAvailable:true,
+                        }]
+                       }
+                  
+                  
+              
+}; // 練習：使用物件變數定義兩位教練的資訊
 
 console.log(gymCoach);
 
