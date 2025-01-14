@@ -127,14 +127,45 @@ if(playerA === '剪刀' && playerB === '石頭'){
 - 背景介紹：李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。
 - 是否接收新學員：否
 */
-      //specialSkill//coachWang//chargePerCourse//courseMin//isAvailable
+      
 
 const gymCoach = {
-     
-                  
-            
-}; // 練習：使用物件變數定義兩位教練的資訊
-
+    coachWang: {
+        specialSkill: ["力量訓練", "減重課程"],
+        course: {
+            personCourse: {
+                chargePerCourse: 2000,
+                courseMin: 60,
+                isAvailable: true,
+            },
+            groupCourse: {
+                chargePerCourse: 1500,
+                courseMin: 90,
+                isAvailable: false,
+            },
+        },
+        backGround: "王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。",
+        isAcceptNewStudents: true,
+    },
+    coachLee: {
+        specialSkill: ["瑜伽", "體態雕塑"],
+        course: {
+            personCourse: {
+                chargePerCourse: 1800,
+                courseMin: 50,
+                isAvailable: false,
+            },
+            groupCourse: {
+                chargePerCourse: 1200,
+                courseMin: 75,
+                isAvailable: true,
+            },
+        },
+        backGround: "李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。",
+        isAcceptNewStudents: false,
+    },
+};
+// 練習：使用物件變數定義兩位教練的資訊
 console.log(gymCoach);
 
 // ### 題目七：
@@ -157,15 +188,15 @@ let performanceData = {
 
 // 練習：第一位教練（可將下方程式碼註解移除，完成答題）
 
- if (performanceData.coaches[0].performance < 50000) {
-   50000 - performanceData.coaches[0].performance
+if(performanceData.coaches[0].performance < 50000){
+      performanceData.coaches[0].performance += 50000 - performanceData.coaches[0].performance
 }
 
 // 練習：第二位教練（可將下方程式碼註解移除，完成答題）
 
-// if (/* 判斷邏輯，使其為 true */) {
-//   // 請填寫第二位教練業績增長程式碼，使用 +=
-// }
+ if (performanceData.coaches[1].performance < 50000) {
+       performanceData.coaches[1].performance += 50000 - performanceData.coaches[1].performance
+}
 
 console.log(performanceData);
 
