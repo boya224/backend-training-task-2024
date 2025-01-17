@@ -49,13 +49,12 @@ let BobPrice = 1800; /* Bob 消費金額 */
 let BobIsVip = false; /* Bob 是否為 VIP */
 
 // 練習：（可自行將下方程式碼的註解刪除，完成答題）
-if (BobPrice >= giftPriceRule || BobIsVip === true) {
+if (BobPrice >= giftPriceRule || BobIsVip) {
       giftNum --;
-      console.Log（"客戶您好，您有符合贈品資格"）；
+      console.log（"客戶您好，您有符合贈品資格"）；
  } else {
-      console.Log（"客戶您好，您沒有符合贈品資格"）
+      console.log（"客戶您好，您沒有符合贈品資格"）
 }
-
 console.log(`贈品還剩下${giftNum}個`);
 
 // ### 題目四：
@@ -74,10 +73,10 @@ let coachBonus = baseBonus; // 教練業績獎金帳單，並已加入條件一�
 
 // 練習：計算教練業績獎金
 
-if (coachIncome < 100000){
+if (coachIncome <= 100000){
       coachBonus+= coachIncome *0.1
       console.log(`支付10%獎金`);
-}else if(coachIncome >= 100000 && coachIncome <=300000 ){
+}else if(coachIncome <=300000 ){
       coachBonus+= coachIncome *0.15
       console.log(`支付15%獎金`);
 }else{
@@ -96,18 +95,15 @@ let playerA = '剪刀';
 let playerB = '剪刀';
 if (playerA === '剪刀' && playerB === '剪刀') {
   console.log('平手');
-}
-
-// 練習：使用 if, else if, else 判斷輸贏
-if(playerA === '剪刀' && playerB === '石頭'){
-      console.log('playerA輸 playerB贏');
-}else if(playerA === '剪刀' && playerB === '布'){
+}else if(
+playerA === '剪刀'&& playerB ==='布'||
+playerA === '石頭'&& playerB ==='剪刀' ||
+playerA === '布'&& playerB ==='石頭'){
       console.log('playerA贏 playerB輸');
-}else if(playerA === '石頭' && playerB === '布'){
-      console.log('playerA輸 playerB贏');{         
 }else{
-      console.log('平手');
+      console.log('playerA輸 playerB贏');
 }
+      
 // ### 題目六：陣列、物件變數定義
 // 這是一間位於高雄市的健身房，名為「高雄市健身教練聯盟」，專注於提供高品質的健身指導服務。健身房內有多位專業教練，以下是兩位教練的詳細介紹：
 /*
@@ -130,43 +126,54 @@ if(playerA === '剪刀' && playerB === '石頭'){
       
 
 const gymCoach = {
-    coachWang: {
-        specialSkill: ["力量訓練", "減重課程"],
-        course: {
-            personCourse: {
-                chargePerCourse: 2000,
-                courseMin: 60,
-                isAvailable: true,
+    name: "高雄市健身教練聯盟",
+    location: "高雄市",
+    description: "專注於提供高品質的健身指導服務",
+    coaches: [
+        {
+            name: '王教練',
+            specialSkill: ["力量訓練", "減重課程"],
+            course: {
+                personCourse: {
+                    chargePerCourse: 2000,
+                    courseMin: 60,
+                    isAvailable: true,
+                },
+                groupCourse: {
+                    chargePerCourse: 1500,
+                    courseMin: 90,
+                    isAvailable: false,
+                },
             },
-            groupCourse: {
-                chargePerCourse: 1500,
-                courseMin: 90,
-                isAvailable: false,
-            },
+            background: "王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。",
+            acceptNewStudents: true,
         },
-        backGround: "王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。",
-        isAcceptNewStudents: true,
-    },
-    coachLee: {
-        specialSkill: ["瑜伽", "體態雕塑"],
-        course: {
-            personCourse: {
-                chargePerCourse: 1800,
-                courseMin: 50,
-                isAvailable: false,
+        {
+            name: '李教練',
+            specialSkill: ["瑜伽", "體態雕塑"],
+            course: {
+                personCourse: {
+                    chargePerCourse: 1800,
+                    courseMin: 50,
+                    isAvailable: false,
+                },
+                groupCourse: {
+                    chargePerCourse: 1200,
+                    courseMin: 75,
+                    isAvailable: true,
+                },
             },
-            groupCourse: {
-                chargePerCourse: 1200,
-                courseMin: 75,
-                isAvailable: true,
-            },
+            background: "李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。",
+            acceptNewStudents: false,
         },
-        backGround: "李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。",
-        isAcceptNewStudents: false,
-    },
+    ]
 };
+
 // 練習：使用物件變數定義兩位教練的資訊
 console.log(gymCoach);
+
+
+
 
 // ### 題目七：
 // 主管要求健身中心的兩位教練業績都需達到 50,000元
